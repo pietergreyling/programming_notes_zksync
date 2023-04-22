@@ -40,9 +40,11 @@ contract MyToken is ERC20 {
 }
 ```
 
-### Programming Tools
+## Programming Tools
 - https://wizard.openzeppelin.com/#erc20
 - https://era.zksync.io/docs/api/tools/zksync-cli/
+- https://hardhat.org/
+- https://hardhat.org/hardhat-runner/docs/getting-started#overview
 
 
 ## References
