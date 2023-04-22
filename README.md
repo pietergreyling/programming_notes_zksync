@@ -18,11 +18,35 @@ The challenge is to learn by implementing the following application components:
 
 I chose to use the following process in building the application.
 
-### Study the ERC-20 specification and Solidity contract implementation
+### Study the ERC-20 specification and a how to mint the token with a Solidity contract implementation
 - https://ethereum.org/en/developers/docs/standards/tokens/erc-20/
 - https://docs.openzeppelin.com/contracts/3.x/erc20
 - https://eips.ethereum.org/EIPS/eip-20
 - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol
+- https://wizard.openzeppelin.com/#erc20
+
+A simple ERC-20 smart contract that mints 100 tokens called "MyToken"
+
+```typescript
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.9;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract MyToken is ERC20 {
+    constructor() ERC20("MyToken", "MTK") {
+        _mint(msg.sender, 100 * 10 ** decimals());
+    }
+}
+```
+
+### Programming Tools
+- https://wizard.openzeppelin.com/#erc20
+- 
+
+
+
+
 
 ## References
 
