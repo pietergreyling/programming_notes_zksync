@@ -42,10 +42,7 @@ contract MyToken is ERC20 {
 
 ### Programming Tools
 - https://wizard.openzeppelin.com/#erc20
-- 
-
-
-
+- https://era.zksync.io/docs/api/tools/zksync-cli/
 
 
 ## References
