@@ -257,10 +257,18 @@ $ npm install --global yarn
 
 - Truffle
   - https://trufflesuite.com/docs/truffle/how-to/install/ 
+
 - Ganache CLI or Ganache GUI
 
-- Hardhat
+- Hardhat and Foundry
+  - https://hardhat.org/hardhat-runner/docs/getting-started#overview
+  - https://hardhat.org/hardhat-runner/docs/getting-started#installation
+  - https://book.getfoundry.sh/
+  - https://github.com/foundry-rs/foundry/releases
+
 - MetaMask
+  - Getting started with MetaMask
+    - https://support.metamask.io/hc/en-us/articles/360015489531-Getting-started-with-MetaMask
 
 ## The Smart Contracts
 
