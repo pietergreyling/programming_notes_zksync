@@ -34,7 +34,10 @@ Tokens can represent virtually anything in Ethereum:
 - an ounce of gold
 - and more...
 
-Such a powerful feature of Ethereum must be handled by a robust standard, right? That's exactly where the ERC-20 plays its role! This standard allows developers to build token applications that are interoperable with other products and services.
+Such a powerful feature of Ethereum must be handled by a robust standard, right? 
+
+That's exactly where the ERC-20 plays its role! 
+This standard allows developers to build token applications that are interoperable with other products and services.
 
 What is ERC-20?
 
