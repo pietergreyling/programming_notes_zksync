@@ -122,7 +122,8 @@ contract MyToken is ERC20 {
 }
 ```
 
-Another sample from https://docs.openzeppelin.com/contracts/3.x/erc20
+Another sample from 
+- https://docs.openzeppelin.com/contracts/3.x/erc20
 ```solidity
 // contracts/GLDToken.sol
 // SPDX-License-Identifier: MIT
@@ -138,6 +139,7 @@ contract GLDToken is ERC20 {
 ```
 
 The previous ERC20 sample token contracts implement the IERC20 interface
+- https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol
 
 ```solidity
 // SPDX-License-Identifier: MIT
