@@ -67,7 +67,9 @@ The ERC-20 introduces a standard for Fungible Tokens, in other words,
 ```
 
 - https://docs.openzeppelin.com/contracts/3.x/erc20
-```
+
+
+![](images/starter.png)
 
 An ERC20 token contract keeps track of fungible tokens: 
 - any one token is exactly equal to any other token; 
