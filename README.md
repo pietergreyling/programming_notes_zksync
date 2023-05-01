@@ -244,9 +244,64 @@ interface IERC20 {
 
 # Implementing the Application
 
-## The ERC20 Token Smart Contract
+## Requirements
 
-### Draft Implementations
+- Node.js
+  - https://nodejs.org/en/download
+- Npm or Yarn
+```shell
+$ npm install --global yarn
+```
+- Remix
+  - https://remix.ethereum.org/
+
+- Truffle
+  - https://trufflesuite.com/docs/truffle/how-to/install/ 
+- Ganache CLI or Ganache GUI
+
+- Hardhat
+- MetaMask
+
+## Draft Implementations
+
+- ERC20 Token implementation:
+```solidity
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract MyToken is ERC20 {
+    constructor() ERC20("MyToken", "MTK") {
+        _mint(msg.sender, 1000000000000000000000);
+    }
+}
+```
+
+- Number guessing game smart contract:
+
+```solidity
+pragma solidity ^0.8.0;
+
+import "./MyToken.sol";
+
+contract NumberGuessingGame {
+    uint256 private randomNumber;
+
+    function generateRandomNumber() public {
+        // generate a random number using an oracle or random source
+        randomNumber = 42;
+    }
+
+    function guess(uint256 _number) public {
+        require(_number <= 100, "Number must be between 0 and 100");
+        require(MyToken.balanceOf(msg.sender) >= 100, "You need 100 MTK to play the game");
+        if (_number == randomNumber) {
+            MyToken.transfer(msg.sender, 100);
+        }
+    }
+}
+
+```
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -355,29 +410,6 @@ contract MyNFT is ERC721 {
   Note that some ERC20 tokens may have additional functions or requirements, so make sure to read the token contract's documentation and test your smart contract thoroughly.
 
 
-
-### Requirements
-
-- Create a ERC-20 token that can be minted.
-  - Pre-mint some tokens in the constructor.
-
-
-## The Number Guessing Smart Contract
-
-### Requirements
-
-- Create a smart contract that stores a secret number.
-  - To play, players must guess the secret number.
-  - To guess, players have to pay in ETH, say, 0.001 ETH.
-  - If players guess the number, they get 80% of the contract value plus 100 ERC20 tokens.
-  - If players don’t guess the correct number, the ETH value is added to the contract.
-  - The deploying account should own the contract.
-  - Only the owner can change the secret number
-  - The contract should emit events whenever:
-    - there is a winner
-    - the user loses
-
-
 ## The dApp Frontend Application
 
 ### Requirements
@@ -387,7 +419,8 @@ contract MyNFT is ERC721 {
   - Keep the UI simple
     - a single page to play the guessing game with a form to enter the guessed number
 
-### A Draft Implementation
+### Draft Implementations
+
 
 
 
