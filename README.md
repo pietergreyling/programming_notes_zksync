@@ -48,6 +48,20 @@ The ERC-20 introduces a standard for Fungible Tokens, in other words,
 ```
 
 - https://docs.openzeppelin.com/contracts/3.x/erc20
+```
+
+An ERC20 token contract keeps track of fungible tokens: 
+- any one token is exactly equal to any other token; 
+- no tokens have special rights or behavior associated with them. 
+- This makes ERC20 tokens useful for things like 
+  - a medium of exchange currency, 
+  - voting rights, 
+  - staking, 
+  - and more.
+
+OpenZeppelin Contracts provides many ERC20-related contracts.
+```
+
 - https://eips.ethereum.org/EIPS/eip-20
 ```
 Simple Summary
@@ -90,11 +104,12 @@ event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 
 
 - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol
+- https://docs.openzeppelin.com/contracts/3.x/api/token/erc20
 - https://wizard.openzeppelin.com/#erc20
 
-A simple ERC-20 smart contract that mints 100 tokens called "MyToken"
+A simple ERC20 smart contract that mints 100 tokens called "MyToken"
 
-```typescript
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
@@ -105,6 +120,105 @@ contract MyToken is ERC20 {
         _mint(msg.sender, 100 * 10 ** decimals());
     }
 }
+```
+
+Another sample from https://docs.openzeppelin.com/contracts/3.x/erc20
+```solidity
+// contracts/GLDToken.sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.0;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract GLDToken is ERC20 {
+    constructor(uint256 initialSupply) public ERC20("Gold", "GLD") {
+        _mint(msg.sender, initialSupply);
+    }
+}
+```
+
+The previous ERC20 sample token contracts implement the IERC20 interface
+
+```solidity
+// SPDX-License-Identifier: MIT
+// OpenZeppelin Contracts (last updated v4.6.0) (token/ERC20/IERC20.sol)
+
+pragma solidity ^0.8.0;
+
+/**
+ * @dev Interface of the ERC20 standard as defined in the EIP.
+ */
+interface IERC20 {
+    /**
+     * @dev Emitted when `value` tokens are moved from one account (`from`) to
+     * another (`to`).
+     *
+     * Note that `value` may be zero.
+     */
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+    /**
+     * @dev Emitted when the allowance of a `spender` for an `owner` is set by
+     * a call to {approve}. `value` is the new allowance.
+     */
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+
+    /**
+     * @dev Returns the amount of tokens in existence.
+     */
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * @dev Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
+
+    /**
+     * @dev Moves `amount` tokens from the caller's account to `to`.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer} event.
+     */
+    function transfer(address to, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Returns the remaining number of tokens that `spender` will be
+     * allowed to spend on behalf of `owner` through {transferFrom}. This is
+     * zero by default.
+     *
+     * This value changes when {approve} or {transferFrom} are called.
+     */
+    function allowance(address owner, address spender) external view returns (uint256);
+
+    /**
+     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * IMPORTANT: Beware that changing an allowance with this method brings the risk
+     * that someone may use both the old and the new allowance by unfortunate
+     * transaction ordering. One possible solution to mitigate this race
+     * condition is to first reduce the spender's allowance to 0 and set the
+     * desired value afterwards:
+     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
+     *
+     * Emits an {Approval} event.
+     */
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    /**
+     * @dev Moves `amount` tokens from `from` to `to` using the
+     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance.
+     *
+     * Returns a boolean value indicating whether the operation succeeded.
+     *
+     * Emits a {Transfer} event.
+     */
+    function transferFrom(address from, address to, uint256 amount) external returns (bool);
+}
+
 ```
 
 ## Programming Tools
