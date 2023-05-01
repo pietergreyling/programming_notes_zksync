@@ -242,14 +242,43 @@ interface IERC20 {
 
 ```
 
-## The Smart Contract Application
+# Implementing the Application
 
-### Requirements (again)
+## The ERC20 Token Smart Contract
+
+### Requirements
+
+- Create a ERC-20 token that can be minted.
+  - Pre-mint some tokens in the constructor.
 
 
+## The Number Guessing Smart Contract
+
+### Requirements
+
+- Create a smart contract that stores a secret number.
+  - To play, players must guess the secret number.
+  - To guess, players have to pay in ETH, say, 0.001 ETH.
+  - If players guess the number, they get 80% of the contract value plus 100 ERC20 tokens.
+  - If players don’t guess the correct number, the ETH value is added to the contract.
+  - The deploying account should own the contract.
+  - Only the owner can change the secret number
+  - The contract should emit events whenever:
+    - there is a winner
+    - the user loses
 
 
-## Programming Tools
+## The dApp Frontend Application
+
+### Requirements
+
+- Create a front end
+  - Use any framework you prefer: Vue.js, React, Next, Svelte, Nuxt…
+  - Keep the UI simple
+    - a single page to play the guessing game with a form to enter the guessed number
+
+
+# Programming Tools
 - https://wizard.openzeppelin.com/#erc20
 - https://era.zksync.io/docs/api/tools/zksync-cli/
 - https://hardhat.org/
