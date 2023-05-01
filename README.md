@@ -262,7 +262,9 @@ $ npm install --global yarn
 - Hardhat
 - MetaMask
 
-## Draft Implementations
+## The Smart Contracts
+
+### Draft Implementations
 
 - ERC20 Token implementation:
 ```solidity
@@ -410,7 +412,7 @@ contract MyNFT is ERC721 {
   Note that some ERC20 tokens may have additional functions or requirements, so make sure to read the token contract's documentation and test your smart contract thoroughly.
 
 
-## The dApp Frontend Application
+## The Dapp Frontend Application
 
 ### Requirements
 
