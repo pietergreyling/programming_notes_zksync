@@ -6,13 +6,32 @@ This repository captures some notes on how to write code for the zkSync Era bloc
 
 The content represents a simple on-boarding guide based upon my initial experiences when building basic Ethereum smart contracts and front-ends integrated with the zkSync Era blockchain platform and tools.
 
-## The Challenge
+## The Project Requirements
 
-The challenge is to learn by implementing the following application components:
+- Create a basic ERC-20 token that can be minted.
+  - Pre-mint some tokens in the constructor.
 
-- A custom ERC-20 token with a compliant smart contract
-  - This contract should mint an initial amount of tokens 
-- A smart contract that allows participants to guess a secret number under the control of the contract owner
+- Create another custom smart contract that stores a secret number.
+  - To play, players must guess the secret number.
+  - To guess, players have to pay in ETH, say, 0.001 ETH.
+  - If players guess the number, they get 80% of the contract value plus 100 ERC20 tokens.
+  - If players don’t guess the correct number, the ETH value is added to the contract.
+  - The deploying account should own the contract.
+  - Only the owner can change the secret number
+  - The contract should emit events whenever:
+    - there is a winner
+    - the user loses
+
+Deploy both contracts to zkSync Testnet.
+
+Create a front end
+- Use any framework you prefer: Vue.js, React, Next, Svelte, Nuxt…
+- Keep the UI simple, a single page to play the guessing game with a form to enter the guessed number
+
+Deliverables:
+GitHub repository with smart contracts, scripts to deploy the contracts and front end.
+A well-written README with details on how to run the application.
+
 
 ## The Development Approach
 
@@ -222,6 +241,13 @@ interface IERC20 {
 }
 
 ```
+
+## The Smart Contract Application
+
+### Requirements (again)
+
+
+
 
 ## Programming Tools
 - https://wizard.openzeppelin.com/#erc20
