@@ -392,21 +392,6 @@ Here are the general steps:
 $ npm install @openzeppelin/contracts
 ```
 
-- Once installed, you can use the contracts in the library by importing them:
-
-```solidity
-// contracts/MyNFT.sol
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
-
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-
-contract MyNFT is ERC721 {
-    constructor() ERC721("MyNFT", "MNFT") {
-    }
-}
-```
-
 - In your smart contract, create an instance of your ERC20 token contract using its address:
 
    ```solidity
