@@ -80,7 +80,7 @@ An ERC20 token contract keeps track of fungible tokens:
   - staking, 
   - and more.
 
-OpenZeppelin Contracts provides many ERC20-related contracts.
+The OpenZeppelin project provides the basis of many ERC20-related contracts.
 ```
 
 - https://eips.ethereum.org/EIPS/eip-20
@@ -122,7 +122,6 @@ function allowance(address _owner, address _spender) public view returns (uint25
 event Transfer(address indexed _from, address indexed _to, uint256 _value)
 event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 ```
-
 
 - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol
 - https://docs.openzeppelin.com/contracts/3.x/api/token/erc20
