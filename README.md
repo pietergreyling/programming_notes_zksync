@@ -246,7 +246,7 @@ interface IERC20 {
 
 ## The ERC20 Token Smart Contract
 
-### A Draft Implementation
+### Draft Implementations
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -293,8 +293,68 @@ contract MyToken {
         return true;
     }
 }
-
 ```
+
+To use your custom ERC20 token in a smart contract, you will need to import the ERC20 interface and create an instance of your token contract. 
+
+Here are the general steps:
+
+- Import the ERC20 interface: Add the following line at the top of your smart contract file to import the ERC20 interface:
+
+   ```solidity
+   import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+   ```
+
+- Make sure to install the OpenZeppelin contracts library if you haven't already done so.
+  - https://docs.openzeppelin.com/contracts/4.x/
+
+```shell
+$ npm install @openzeppelin/contracts
+```
+
+- Once installed, you can use the contracts in the library by importing them:
+
+```solidity
+// contracts/MyNFT.sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+
+contract MyNFT is ERC721 {
+    constructor() ERC721("MyNFT", "MNFT") {
+    }
+}
+```
+
+- Create an instance of your token contract: In your smart contract, create an instance of your ERC20 token contract using its address:
+
+   ```solidity
+   address tokenAddress = 0x1234567890123456789012345678901234567890; // Replace with your token contract address
+   IERC20 token = IERC20(tokenAddress);
+   ```
+
+   This will allow your smart contract to interact with your ERC20 token contract.
+
+- Use the ERC20 interface functions: You can now use the ERC20 interface functions to interact with your token contract. For example, you can use the `balanceOf()` function to check the balance of a specific address:
+
+   ```solidity
+   function checkBalance(address account) public view returns (uint256) {
+       return token.balanceOf(account);
+   }
+   ```
+
+   You can also use the `transfer()` function to transfer tokens:
+
+   ```solidity
+   function transferTokens(address recipient, uint256 amount) public {
+       token.transfer(recipient, amount);
+   }
+   ```
+
+  Note that some ERC20 tokens may have additional functions or requirements, so make sure to read the token contract's documentation and test your smart contract thoroughly.
+
+
 
 ### Requirements
 
