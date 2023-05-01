@@ -384,7 +384,7 @@ contract MyNFT is ERC721 {
 }
 ```
 
-- Create an instance of your token contract: In your smart contract, create an instance of your ERC20 token contract using its address:
+- In your smart contract, create an instance of your ERC20 token contract using its address:
 
    ```solidity
    address tokenAddress = 0x1234567890123456789012345678901234567890; // Replace with your token contract address
