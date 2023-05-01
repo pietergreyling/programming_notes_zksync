@@ -80,7 +80,7 @@ An ERC20 token contract keeps track of fungible tokens:
   - staking, 
   - and more.
 
-The OpenZeppelin project provides the basis of many ERC20-related contracts.
+The OpenZeppelin project provides the basis for many contracts.
 ```
 
 - https://eips.ethereum.org/EIPS/eip-20
