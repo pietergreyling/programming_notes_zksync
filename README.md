@@ -49,6 +49,21 @@ The ERC-20 introduces a standard for Fungible Tokens, in other words,
 
 - https://docs.openzeppelin.com/contracts/3.x/erc20
 - https://eips.ethereum.org/EIPS/eip-20
+```
+Simple Summary
+- A standard interface for tokens.
+
+Abstract
+The following standard allows for 
+- the implementation of a standard API for tokens within smart contracts. 
+- This standard provides basic functionality to transfer tokens, 
+- as well as allow tokens to be approved so they can be spent by another on-chain third party.
+
+Motivation
+- A standard interface allows any tokens on Ethereum to be re-used by other applications: 
+  - from wallets to decentralized exchanges.
+```
+
 - https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol
 - https://wizard.openzeppelin.com/#erc20
 
