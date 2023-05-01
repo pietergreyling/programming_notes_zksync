@@ -431,7 +431,49 @@ contract MyNFT is ERC721 {
 
 ### Draft Implementations
 
+```javascript
+import React, { useState } from "react";
+import { ethers } from "ethers";
 
+const contractAddress = "0x..."; // Replace with your deployed contract address
+const abi = [...]; // Replace with your contract ABI
+
+function GuessingGame() {
+  const [guess, setGuess] = useState("");
+  const [result, setResult] = useState("");
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const contract = new ethers.Contract(contractAddress, abi, signer);
+    const tx = await contract.guess(guess);
+    await tx.wait();
+    const winner = await contract.reveal();
+    setResult(winner);
+  }
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Guess:
+          <input
+            type="text"
+            value={guess}
+            onChange={(e) => setGuess(e.target.value)}
+          />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+      {result && <p>The winner is {result}!</p>}
+    </div>
+  );
+}
+
+export default GuessingGame;
+
+```
 
 
 # Programming Tools
