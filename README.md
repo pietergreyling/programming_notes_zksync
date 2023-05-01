@@ -246,7 +246,7 @@ interface IERC20 {
 
 # Implementing the Application
 
-## Requirements
+## Base Requirements
 
 - Node.js
   - https://nodejs.org/en/download
@@ -271,6 +271,19 @@ $ npm install --global yarn
 - MetaMask
   - Getting started with MetaMask
     - https://support.metamask.io/hc/en-us/articles/360015489531-Getting-started-with-MetaMask
+
+
+## zkSync / Era Requirements
+
+- https://era.zksync.io/docs/api/tools/zksync-cli/
+- https://github.com/matter-labs/zksync-cli
+
+### Install the zkSync CLI globally with the following command:
+- https://github.com/matter-labs/zksync-cli
+
+```shell
+$ npm i -g zksync-cli@latest
+```
 
 ## The Smart Contracts
 
