@@ -47,9 +47,21 @@ contract MyToken is ERC20 {
 - https://hardhat.org/hardhat-runner/docs/getting-started#overview
 
 
-## References
+## Matter Labs (zkSync Era) References
 
+### Matter Labs (zkSync Era) Documentation
 - https://matter-labs.io/
 - https://matterlabs.notion.site/Shape-the-future-of-Ethereum-at-Matter-Labs-dfb3b5a037044bb3a8006af2eb0575e0
 - https://era.zksync.io/docs/
 - https://era.zksync.io/docs/dev/
+
+### Matter Labs (zkSync Era) Toolchain
+
+- zkSync-CLI to scaffold a project: 
+  - https://era.zksync.io/docs/api/tools/zksync-cli/
+- A quickstart tutorial that includes a frontend integration: 
+  - https://era.zksync.io/docs/dev/building-on-zksync/hello-world.html
+- Deployment instructions: 
+  - https://era.zksync.io/docs/api/hardhat/hardhat-zksync-deploy.html
+- zkSync-Web3 frontends to interact with contracts: 
+  - https://era.zksync.io/docs/api/js/getting-started.html
