@@ -38,7 +38,10 @@ Such a powerful feature of Ethereum must be handled by a robust standard, right?
 
 What is ERC-20?
 
-The ERC-20 introduces a standard for Fungible Tokens, in other words, they have a property that makes each Token be exactly the same (in type and value) as another Token. For example, an ERC-20 Token acts just like the ETH, meaning that 1 Token is and will always be equal to all the other Tokens.
+The ERC-20 introduces a standard for Fungible Tokens, in other words, 
+- they have a property that makes each Token be exactly the same (in type and value) as another Token. 
+- For example, an ERC-20 Token acts just like the ETH, 
+- meaning that 1 Token is and will always be equal to all the other Tokens.
 ```
 
 - https://docs.openzeppelin.com/contracts/3.x/erc20
