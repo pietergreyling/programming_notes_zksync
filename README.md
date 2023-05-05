@@ -80,30 +80,30 @@ An ERC20 token contract keeps track of fungible tokens:
   - staking, 
   - and more.
 
-The OpenZeppelin project provides the basis for many contracts.
+### The OpenZeppelin project provides the basis for many contracts.
 ```
-
 - https://eips.ethereum.org/EIPS/eip-20
 ```
-Simple Summary
+
+#### Simple Summary
 - A standard interface for tokens.
 
-Abstract
-The following standard allows for 
+#### Abstract
+The standard allows for 
 - the implementation of a standard API for tokens within smart contracts. 
 - This standard provides basic functionality to transfer tokens, 
 - as well as allow tokens to be approved so they can be spent by another on-chain third party.
 
-Motivation
+#### Motivation
 - A standard interface allows any tokens on Ethereum to be re-used by other applications: 
   - from wallets to decentralized exchanges.
-```
 
 ### ERC20 Token Implementation Specification
 
 - https://ethereum.org/en/developers/docs/standards/tokens/erc-20/
 
 #### Methods
+
 ```solidity
 function name() public view returns (string)
 function symbol() public view returns (string)
@@ -324,7 +324,6 @@ contract NumberGuessingGame {
         }
     }
 }
-
 ```
 
 ```solidity
